@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/resenha.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/Imagens/batata_1.webp">
+    <title>Resenhas</title>
+
+
+    <header class="header">
+        <div class="containerMenu">
+            <nav class="menu-topo">
+                <ul>
+                    <li><a href="index.html" class="btn">HOME</a></li>
+                    <li><a href="jogos.html" class="btn">JOGOS</a></li>
+                    <li><a href="series.html" class="btn">SÉRIES</a></li>
+                    <li><a href="livros.html" class="btn">LIVROS</a></li>
+                    <li><a href="filmes.html" class="btn">FILMES</a></li>
+                    <li><a href="entrar.html" class="btn">ENTRAR</a></li>
+                    <li> <div id="divBusca">
+                        <input type="text" id="txtBusca" placeholder="Buscar..."/>
+                        <img src="assets\Imagens\lupa.png" id="btnBusca" alt="Buscar"/>
+                      </div></li>
+
+                </ul>
+            </nav>
+            </div>
+        </header>
+        </head>
+    
+
+<body>
+
+<div class="container">
+    <form id="formulario">
+        <h1>Escrever Resenha</h1>
+        <div class="campo">
+            <input type="text" id="nickF" placeholder="Seu nick">
+        </div>
+        <div class="campo">
+            <input type="text" id="generoF" placeholder="Gênero">
+        </div>
+        <div class="campo">
+            <input type="text" id="nomeFilme" placeholder="Nome do Filme">
+        </div>
+        <div class="campo">
+            <textarea id="resenhaF" placeholder="Escreva sua resenha aqui..."></textarea>
+        </div>
+        <button type="button" onclick="enviarResenha()">Enviar</button>
+    </form>
+    
+<br>
+<h1>Resenhas</h1>
+    <div id="resenhasAntigas"></div> <!-- Movido para baixo do formulário -->
+</div>
+
+
+<script src="assets/Javascript/scriptResenhaFilmes.js"></script>
+<script src="assets/Javascript/scriptbotoesFilmes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+#divBusca {
+    background-color: rgba(168, 168, 168);
+    border: solid 1px;
+    border-radius: 15px;
+    width: 15%;
+    position: absolute;
+    top: 20px; /* Define a distância do topo do elemento pai */
+    right: 20px; /* Define a distância da borda direita do elemento pai */
+}
+
+  
+  #txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:20px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+    height:20px;
+    width:70%;
+    align-items: left;
+}
+
+.box {
+    width: 80%; /* Ajusta a largura da caixa */
+    max-width: 400px; /* Define a largura máxima */
+    margin: auto; /* Centraliza a caixa */
+    background-color: #291f3d; /* Cor de fundo da caixa */
+    padding: 20px; /* Adiciona espaçamento interno */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Adiciona sombra */
+    overflow: hidden; /* Esconde as partes do slide que ultrapassam a largura da caixa */
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide img {
+    width: 100%; /* Define a largura total da imagem */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Define a largura como 100% para se ajustar ao contêiner pai */
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%; /* Define largura 100% para ocupar todo o espaço disponível */
+}
+
+.carousel-slide img {
+    max-width: 100%; /* Define a largura máxima para as imagens */
+    height: auto;
+    max-height: 300px; /* Define uma altura máxima para as imagens */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        margin-top: 15px; /* Reduz a margem superior em tamanhos de tela menores */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .carousel-container {
+        margin-top: 10px; /* Reduz ainda mais a margem superior em tamanhos de tela menores */
+    }
+
+    .container {
+        padding: 0 10px; /* Reduz ainda mais o padding nos tamanhos de tela menores */
+    }
+
+    .menu-topo ul li {
+        margin-right: 5px; /* Reduz a margem entre os itens do menu */
+    }
+
+    #prevBtn, #nextBtn {
+        padding: 8px 12px; /* Reduz o padding dos botões de navegação */
+    }
+}
+
+
+body {
+    background-color:#a9a6a9;
+    color: #333;
+    font-family: "Impact", sans-serif;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerppp {
+    width: 80%; /* Largura do retângulo */
+    max-width: 800px; /* Largura máxima do retângulo */
+    text-align: center; /* Centralizar o conteúdo dentro do retângulo */
+    padding: 20px; /* Adicionar um espaçamento interno */
+    background-color: #a9a6a9; /* Cor de fundo do retângulo */
+    border-radius: 10px; /* Arredondar as bordas do retângulo */
+    box-shadow: 30px 30px 70px 30px rgba(0, 0, 0, 0.2); /* Adicionar uma sombra ao retângulo */
+    margin: auto; /* Centralizar o retângulo horizontalmente */
+}
+
+.header {
+    background-color: #291f3d;
+    padding: 10px;
+    font-family: "Impact", sans-serif;
+}
+
+.menu-topo ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-topo li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.menu-topo li:first-child {
+    margin-left: 0;
+}
+
+.menu-topo li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.menu-topo li a:hover {
+    background: rgba(168, 168, 168);
+    color: #1b1b1b;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 20px 20px;
+}
+
+h1, h2, p {
+    color: #291f3d;
+    text-align: center;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+p {
+    color:#333;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    text-align:center;
+    display: block;
+}
+
+
+/* Estilização específica para alguns elementos */
+.call-to-action {
+    background-color: #2f034d;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 24px;
+    border-radius: 5px;
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.call-to-action:hover {
+    background-color:#666;
+    color:#2f034d;
+}
+
+.quote {
+    color: #999;
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+}
+
+.quote span {
+    color: #291f3d;
+}
+
+/* Estilos para telas menores */
+@media only screen and (max-width: 900px) {
+    
+    .menu-topo ul {
+        flex-direction: column; /* Muda para direção de coluna para empilhar os itens do menu */
+        align-items: center; /* Centraliza os itens do menu na vertical */
+    }
+
+    .menu-topo li {
+        margin: 5px;
+    }
+
+    .menu-topo li a {
+        display: block; /* Muda para exibição de bloco para ocupar a largura total */
+        padding: 5px 0; /* Reduz o padding para ocupar menos espaço vertical */
+        text-align: center; /* Centraliza o texto */
+    }
+    
+    #divBusca {
+        display: none;
+    }
+    
+    #txtBusca {
+        display: none;
+    }
+}

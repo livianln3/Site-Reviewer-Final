@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/styleEntrar.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/Imagens/batata_1.webp">
+    <title>Login</title>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <nav class="menu-topo">
+            <ul>
+                <li><a href="index.html" class="btn">HOME</a></li>
+                <li><a href="jogos.html" class="btn">JOGOS</a></li>
+                <li><a href="series.html" class="btn">SÉRIES</a></li>
+                <li><a href="livros.html" class="btn">LIVROS</a></li>
+                <li><a href="filmes.html" class="btn">FILMES</a></li>
+                <li><a href="entrar.html" class="btn">ENTRAR</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="box">
+    <form action="">
+        <legend>Login</legend>
+        <br>
+      
+        <div class="inputBox">
+            <input type="text" id="email" placeholder="E-mail:" required> 
+        </div>
+
+        <div class="inputBox">
+            <input type="password" name="Senha" placeholder="Senha:" required> 
+        </div>
+        <div class ="linkCada">
+        <nav class ="linkCad">
+        <a href="cadastro.html" class="call-to-action"><u>Não tenho cadastro</u></a>
+    </nav>
+</div>
+
+          <div class="inputBox">
+            <button class="call-to-action" onclick="enviar()">Entrar</button> </form> 
+        <script type="text/javascript"> function enviar() { 
+          let valor = document.getElementById("nome").value; 
+         alert("Você digitou: " +valor); 
+    } 
+    </script>
+        </div>
+    </form>
+</div>
+</body>

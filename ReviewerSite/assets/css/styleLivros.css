@@ -1,0 +1,309 @@
+body {
+    background-color:#a9a6a9;
+    color: #333;
+    font-family: "Impact", sans-serif;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerppp {
+    width: 80%; /* Largura do retângulo */
+    max-width: 800px; /* Largura máxima do retângulo */
+    text-align: center; /* Centralizar o conteúdo dentro do retângulo */
+    padding: 20px; /* Adicionar um espaçamento interno */
+    background-color: #a9a6a9; /* Cor de fundo do retângulo */
+    border-radius: 10px; /* Arredondar as bordas do retângulo */
+    box-shadow: 30px 30px 70px 30px rgba(0, 0, 0, 0.2); /* Adicionar uma sombra ao retângulo */
+    margin: auto; /* Centralizar o retângulo horizontalmente */
+}
+
+.header {
+    background-color: #291f3d;
+    padding: 10px;
+    font-family: "Impact", sans-serif;
+}
+
+.menu-topo ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-topo li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.menu-topo li:first-child {
+    margin-left: 0;
+}
+
+.menu-topo li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.menu-topo li a:hover {
+    background: rgba(168, 168, 168);
+    color: #1b1b1b;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0; /* Alinha o topo do menu ao topo da janela */
+    right: 0; /* Alinha o menu à margem direita */
+    height: 100%; /* Faz o menu ocupar toda a altura da janela */
+    width: 100px; /* Define a largura do contêiner do menu */
+    display: flex;
+    flex-direction: column; /* Define a direção dos itens como coluna */
+    justify-content: space-between; /* Distribui os itens uniformemente ao longo da coluna */
+    align-items: center; /* Alinha os itens ao centro horizontalmente */
+    transition: width 0.3s ease; /* Adiciona transição para a animação do menu */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #291f3d;
+    z-index: 9999; /* Define o z-index para garantir que o menu esteja acima de outros elementos */
+}
+
+
+.vertical-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vertical-nav li {
+    margin-bottom: 10px; /* Espaço entre os itens do menu */
+}
+
+.vertical-nav a {
+    text-decoration: none;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.vertical-nav a:hover {
+    background: rgba(168, 168, 168);
+    color: #1b1b1b;
+}
+
+.menu-open .nav-container {
+    right: 0;
+}
+
+/* Ícone de menu com três barras */
+.menu-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    position: right;
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.carousel-container {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    align-items: center;
+    z-index: 1; /* Garante que o carrossel esteja sempre acima de outros elementos */
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide img {
+    max-width: 25%; /* Defina a largura máxima como 25% para que quatro imagens caibam lado a lado */
+    height: auto;
+    max-height: 300px; 
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 15px; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        margin-top: 15px; 
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .carousel-container {
+        margin-top: 10px; 
+    }
+
+    .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex; /* Para alinhar os elementos filhos */
+    justify-content: center; /* Para centralizar os elementos horizontalmente */
+    align-items: center; 
+    }
+
+    .menu-topo ul li {
+        margin-right: 5px; 
+    }
+
+    #prevBtn, #nextBtn {
+        padding: 8px 12px; 
+    }
+}
+
+h1, h2, p {
+    color: #291f3d;
+    text-align: center;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+p {
+    color:#333;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    text-align:center;
+    display: block;
+}
+
+.jogos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px; /* Adicione a margem superior desejada */
+}
+
+.jogo {
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin: 120px;
+}
+
+.jogo img {
+    width: 200px; /* Ajuste conforme necessário */
+    height: auto;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.jogo p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.jogo:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+    .jogo {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    
+    .menu-topo ul {
+        flex-direction: column; /* Muda para direção de coluna para empilhar os itens do menu */
+        align-items: center; /* Centraliza os itens do menu na vertical */
+    }
+
+    .menu-topo li {
+        margin: 5px;
+    }
+
+    .menu-topo li a {
+        display: block; /* Muda para exibição de bloco para ocupar a largura total */
+        padding: 5px 0; /* Reduz o padding para ocupar menos espaço vertical */
+        text-align: center; /* Centraliza o texto */
+    }
+    
+}
