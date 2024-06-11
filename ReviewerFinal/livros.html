@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesJogos.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/Imagens/batata_1.webp">
+    <title>Jogos</title>
+    <script type="text/javascript">
+        // Verifica se o usuário está logado
+        if (!localStorage.getItem("isLoggedIn")) {
+            window.location.href = "entrar.html";
+        }
+    </script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Função para atualizar o botão de login/perfil
+            function updateLoginButton() {
+                const loginBtn = document.getElementById('loginBtn');
+                if (localStorage.getItem('isLoggedIn')) {
+                    loginBtn.textContent = 'PERFIL';
+                    loginBtn.href = 'perfil.html'; // Redireciona para a página de perfil
+                }
+            }
+
+            // Chama a função ao carregar a página
+            updateLoginButton();
+
+            // Lógica do menu lateral
+            const toggleMenu = document.getElementById('toggleMenu');
+            const navContainer = document.getElementById('navContainer');
+
+            toggleMenu.addEventListener('click', function() {
+                navContainer.classList.toggle('show');
+            });
+
+            // Lógica do carrossel
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const carouselImages = document.querySelectorAll('.carousel-slide img');
+
+            // Botões
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            // Contador
+            let counter = 0;
+            const size = carouselImages[0].clientWidth;
+
+            // Botões de navegação do carrossel
+            nextBtn.addEventListener('click', () => {
+                if (counter >= carouselImages.length - 1) return;
+                carouselSlide.style.transition = "transform 0.4s ease-in-out";
+                counter++;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (counter <= 0) return;
+                carouselSlide.style.transition = "transform 0.4s ease-in-out";
+                counter--;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="menu-topo">
+                <ul>
+                    <li><a href="index.html" class="btn">HOME</a></li>
+                    <li><a href="jogos.html" class="btn">JOGOS</a></li>
+                    <li><a href="series.html" class="btn">SÉRIES</a></li>
+                    <li><a href="livros.html" class="btn">LIVROS</a></li>
+                    <li><a href="filmes.html" class="btn">FILMES</a></li>
+                    <li><a href="entrar.html" id="loginBtn" class="btn">ENTRAR</a></li>
+                </ul>
+            </nav>
+            <button id="toggleMenu" class="menu-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+        <div class="nav-container" id="navContainer">
+            <nav class="vertical-nav" id="verticalNav">
+                <ul>
+                    <li data-genre="Romance"><a href="resenhasLivros.html">Romance</a></li>
+                    <li data-genre="Distopia"><a href="resenhasLivros.html">Distopia</a></li>
+                    <li data-genre="Fantasias"><a href="resenhasLivros.html">Fantasia</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="assets\Imagens\3.png" alt="Imagem 1">
+                <img src="assets\Imagens\4.png" alt="Imagem 2">
+                <img src="assets\Imagens\2.png" alt="Imagem 3">
+                <img src="assets\Imagens\5.png" alt="Imagem 4">
+                <img src="assets\Imagens\1.png" alt="Imagem 5">
+                <img src="assets\Imagens\6.png" alt="Imagem 6">
+                <img src="assets\Imagens\7.png" alt="Imagem 7">
+                <img src="assets\Imagens\8.png" alt="Imagem 8">
+                <img src="assets\Imagens\9.png" alt="Imagem 9">
+                <img src="assets\Imagens\10.png" alt="Imagem 10">
+
+            </div>
+            <button id="prevBtn">Anterior</button>
+            <button id="nextBtn">Próximo</button>
+        </div>
+
+       <h1>Explore nosso catálogo de Livros!</h1>
+        <br>
+        <h2>Descubra os melhores títulos e mergulhe em aventuras inesquecíveis</h2>
+
+
+        <div class="jogos-container">
+            <div class="jogos-container">
+                <div class="jogo" data-sinopse="A primeira aventura de Percy Jackson, um semideus, em busca do Ladrão de Raios.">
+                    <img src="assets/Imagens/percyCapa.jpg" alt="percy">
+                    <p>Percy Jackson: </p>
+                    <p>O ladrão de Raios</p>
+                </div>
+                <div class="jogo" data-sinopse="Um mistério envolvente de Agatha Christie onde Hercule Poirot investiga um assassinato intrigante.">
+                    <img src="assets/Imagens/a morte da sraCapa.webp" alt="amorte">
+                    <p>A morte da Sra McGinty</p>
+                </div>
+                <div class="jogo" data-sinopse="A luta pela sobrevivência de Katniss Everdeen nos brutais Jogos Vorazes.">
+                    <img src="assets/Imagens/jogosvorCapa.jpg" alt="jvC">
+                    <p>Jogos Vorazes</p>
+                </div>
+                <div class="jogo" data-sinopse="Uma mãe e seus filhos lutam para sobreviver em um mundo pós-apocalíptico onde a visão é fatal.">
+                    <img src="assets/Imagens/caixadepa.webp" alt="cxp">
+                    <p>Caixa de Pássaros</p>
+                </div>
+            </div>
+                </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/Javascript/scriptJogos.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesJogos.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/Imagens/batata_1.webp">
+    <title>Jogos</title>
+    <script type="text/javascript">
+        // Verifica se o usuário está logado
+        if (!localStorage.getItem("isLoggedIn")) {
+            window.location.href = "entrar.html";
+        }
+    </script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Função para atualizar o botão de login/perfil
+            function updateLoginButton() {
+                const loginBtn = document.getElementById('loginBtn');
+                if (localStorage.getItem('isLoggedIn')) {
+                    loginBtn.textContent = 'PERFIL';
+                    loginBtn.href = 'perfil.html'; // Redireciona para a página de perfil
+                }
+            }
+
+            // Chama a função ao carregar a página
+            updateLoginButton();
+
+            // Lógica do menu lateral
+            const toggleMenu = document.getElementById('toggleMenu');
+            const navContainer = document.getElementById('navContainer');
+
+            toggleMenu.addEventListener('click', function() {
+                navContainer.classList.toggle('show');
+            });
+
+            // Lógica do carrossel
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const carouselImages = document.querySelectorAll('.carousel-slide img');
+
+            // Botões
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            // Contador
+            let counter = 0;
+            const size = carouselImages[0].clientWidth;
+
+            // Botões de navegação do carrossel
+            nextBtn.addEventListener('click', () => {
+                if (counter >= carouselImages.length - 1) return;
+                carouselSlide.style.transition = "transform 0.4s ease-in-out";
+                counter++;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (counter <= 0) return;
+                carouselSlide.style.transition = "transform 0.4s ease-in-out";
+                counter--;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="menu-topo">
+                <ul>
+                    <li><a href="index.html" class="btn">HOME</a></li>
+                    <li><a href="jogos.html" class="btn">JOGOS</a></li>
+                    <li><a href="series.html" class="btn">SÉRIES</a></li>
+                    <li><a href="livros.html" class="btn">LIVROS</a></li>
+                    <li><a href="filmes.html" class="btn">FILMES</a></li>
+                    <li><a href="entrar.html" id="loginBtn" class="btn">ENTRAR</a></li>
+                </ul>
+            </nav>
+            <button id="toggleMenu" class="menu-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+        <div class="nav-container" id="navContainer">
+            <nav class="vertical-nav" id="verticalNav">
+                <ul>
+                    <li data-genre="romance"><a href="resenhasFilmes.html">Romance</a></li>
+                    <li data-genre="Distopia"><a href="resenhasFilmes.html">Distopia</a></li>
+                    <li data-genre="AcaoAvent"><a href="resenhasFilmes.html">Ação e Aventura</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="assets\Imagens\Joker F1.png" alt="Imagem 1">
+                <img src="assets\Imagens\Shrek F2.png" alt="Imagem 2">
+                <img src="assets\Imagens\nasceUmaEstrela F3.png" alt="Imagem 3">
+                <img src="assets\Imagens\panico F4.png" alt="Imagem 4">
+                <img src="assets\Imagens\jogosvorazes F5.png" alt="Imagem 5">
+                <img src="assets\Imagens\john F6.png" alt="Imagem 6">
+                <img src="assets\Imagens\ossuspeitos F7.png" alt="Imagem 7">
+                <img src="assets\Imagens\miranha F8.png" alt="Imagem 8">
+                <img src="assets\Imagens\gatodebotas F9.png" alt="Imagem 9">
+                <img src="assets\Imagens\IT F10.png" alt="Imagem 10">
+
+            </div>
+            <button id="prevBtn">Anterior</button>
+            <button id="nextBtn">Próximo</button>
+        </div>
+
+        <h1>Explore nosso catálogo de Filmes!</h1>
+        <br>
+        <h2>Descubra os melhores títulos e mergulhe em aventuras inesquecíveis</h2>
+
+        <div class="jogos-container">
+            <div class="jogos-container">
+                <div class="jogo" data-sinopse="Uma prequela emocionante de Jogos Vorazes, explorando as origens da tirania do Capitólio.">
+                    <img src="assets/Imagens/cantigadospassarosCapa.webp" alt="cdp">
+                    <p>Jogos Vorazes: A Cantiga</p>
+                    <p>dos Pássaros e </p>
+                    <p>das Serpentes </p>
+                </div>
+                <div class="jogo" data-sinopse="A biografia de Harvey Milk, o primeiro político abertamente gay a ser eleito para um cargo público na Califórnia.">
+                    <img src="assets/Imagens/milkvoz.jpg" alt="milk">
+                    <p>Milk: </p>
+                    <p>A voz da Igualdade</p>
+                </div>
+                <div class="jogo" data-sinopse="Uma celebração vibrante e comovente do amor e da música, ambientada em Los Angeles.">
+                    <img src="assets/Imagens/lalaland.jpeg" alt="lala">
+                    <p>La la Land: </p>
+                    <p>Cantando Estações</p>
+                </div>
+                <div class="jogo" data-sinopse="O Gato de Botas embarca em uma jornada épica para encontrar a mítica Estrela dos Desejos.">
+                    <img src="assets/Imagens/gtb.jpeg" alt="gtb">
+                    <p>Gato de Botas 2: </p>
+                    <p>O último Pedido</p>
+                </div>
+            </div>
+                </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/Javascript/scriptJogos.js"></script>
+</body>
+</html>

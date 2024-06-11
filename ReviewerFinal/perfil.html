@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesPerfil.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/Imagens/batata_1.webp">
+    <title>Perfil</title>
+    <script type="text/javascript">
+        // Verifica se o usuário está logado
+        if (!localStorage.getItem("isLoggedIn")) {
+            window.location.href = "entrar.html";
+        }
+    </script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Função para atualizar o botão de login/perfil
+            function updateLoginButton() {
+                const loginBtn = document.getElementById('loginBtn');
+                if (localStorage.getItem('isLoggedIn')) {
+                    loginBtn.textContent = 'PERFIL';
+                    loginBtn.href = 'perfil.html'; // Redireciona para a página de perfil
+                }
+            }
+
+            // Chama a função ao carregar a página
+            updateLoginButton();
+
+            // Lógica do menu lateral
+            const toggleMenu = document.getElementById('toggleMenu');
+            const navContainer = document.getElementById('navContainer');
+
+            toggleMenu.addEventListener('click', function() {
+                navContainer.classList.toggle('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="menu-topo">
+                <ul>
+                    <li><a href="index.html" class="btn">HOME</a></li>
+                    <li><a href="jogos.html" class="btn">JOGOS</a></li>
+                    <li><a href="series.html" class="btn">SÉRIES</a></li>
+                    <li><a href="livros.html" class="btn">LIVROS</a></li>
+                    <li><a href="filmes.html" class="btn">FILMES</a></li>
+                    <li><a href="entrar.html" id="loginBtn" class="btn">ENTRAR</a></li>
+                </ul>
+            </nav>
+           
+        </div>
+        
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-header">
+           
+            <h1 class="profile-username"></h1>
+        </div>
+
+        <div class="profile-details">
+            <h2>Informações Pessoais</h2>
+            <p>Nick: <span id="profile-nick">galinhaPintadinha123</span></p>
+            <p>Nome: <span id="profile-name">Adalberto</span></p>
+            <p>Email: <span id="profile-email">usuario@example.com</span></p>
+          
+        </div>
+
+        <div class="profile-reviews">
+            <h2>Minhas Resenhas</h2>
+            <div class="review">
+                <h3>Red Dead Redemption 2</h3>
+                <p>A história de Arthur Morgan, um fora da lei membro da gangue Van der Linde.</p>
+            </div>
+            <div class="review">
+                <h3>God Of War 4</h3>
+                <p>A jornada de Kratos e seu filho Atreus em busca da verdade e redenção.</p>
+            </div>
+            <!-- Adicione mais resenhas conforme necessário -->
+        </div>
+
+        <div class="profile-settings">
+            <h2>Configurações de Conta</h2>
+            <button class="settings-btn" id="changePasswordBtn">Alterar Senha</button>
+            <button class="settings-btn" id="editProfileBtn">Editar Perfil</button>
+            <button class="settings-btn" id="logoutBtn">Sair</button>
+        </div>
+    </div>
+
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeEditProfileModalBtn">&times;</span>
+            <h2>Editar Perfil</h2>
+            <form id="editProfileForm">
+                <input type="text" id="nome" name="nome" value="Adalberto" placeholder="Nome:">
+                
+                <input type="text" id="nick" name="nick" value="galinhaPintadinha123" placeholder="Nick:">
+                
+                <input type="email" id="email" name="email" value="usuario@example.com" placeholder="E-mail:">
+    
+                <button type="submit" class="settings-btn">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeChangePasswordModalBtn">&times;</span>
+            <h2>Alterar Senha</h2>
+            <form id="changePasswordForm">
+                <label for="current-password">Senha Atual:</label>
+                <input type="password" id="current-password" name="current-password" required>
+                <label for="new-password">Nova Senha:</label>
+                <input type="password" id="new-password" name="new-password" required>
+                <label for="confirm-password">Confirmar Nova Senha:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <button type="submit" class="settings-btn">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/Javascript/scriptPerfil.js"></script>
+</body>
+</html>
+
+

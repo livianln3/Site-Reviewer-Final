@@ -1,0 +1,143 @@
+.box{
+    width: 70%; /* Largura do retângulo */
+    max-width: 80%; /* Largura máxima do retângulo */
+    text-align: center; /* Centralizar o conteúdo dentro do retângulo */
+    padding: 5%; /* Adicionar um espaçamento interno */
+    background-color:#291f3d; /* Cor de fundo do retângulo */
+    margin: auto; /* Centralizar o retângulo horizontalmente */
+} 
+
+.box legend {
+    font-size: 30px;
+}
+
+
+.inputBox input {
+    width: 70%; /* Define a largura desejada */
+    padding: 10px; 
+    box-sizing: border-box; 
+    margin-bottom: 10px; 
+}
+
+
+body {
+   background-color:#a9a6a9;
+    color: #7B68EE;
+    font-family: "Impact", sans-serif;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    background-color: #291f3d;
+    padding: 10px;
+    font-family: "Impact", sans-serif;
+}
+
+.menu-topo ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-topo li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.menu-topo li:first-child {
+    margin-left: 0;
+}
+
+.menu-topo li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.menu-topo li a:hover {
+    background: rgba(168, 168, 168);
+    color: #1b1b1b;
+}
+
+/* Estilização específica para alguns elementos */
+.call-to-action {
+    background-color: #2f034d;
+    color: #fff;
+    padding: 10px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    display: block;
+    width: 30%;
+    margin: 20px auto;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.call-to-action:hover {
+    background-color:#666;
+    color:#2f034d;
+}
+
+.quote {
+    color: #999;
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+}
+
+.quote span {
+    color: #291f3d;
+}
+
+/* Estilos para telas menores */
+@media only screen and (max-width: 900px) {
+    
+    .menu-topo {
+        justify-content: center; /* Centraliza os itens do menu em telas menores */
+        margin-left: 10px; /* Adiciona um espaçamento à esquerda do menu em telas menores */
+    }
+
+    .menu-topo ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .menu-topo li {
+        display: inline-block;
+        margin-left: -30px;
+        margin-top: -40px;
+    }
+    
+    .menu-topo li:first-child {
+        margin-left: -10px;
+    }
+
+    .menu-topo li a {
+        font-size: 10px;
+        
+    }
+
+    .menu-topo {
+        justify-content: center; /* Centraliza os itens do menu em telas menores */
+    }
+
+    .menu-topo li a {
+        font-size: 10px; /* Diminui o tamanho da fonte para telas menores */
+    }
+
+}
