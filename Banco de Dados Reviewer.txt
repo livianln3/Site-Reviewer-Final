@@ -1,0 +1,89 @@
+CREATE DATABASE bdReviewer;
+
+CREATE SCHEMA sReviewer
+
+USE bdReviewer;
+
+CREATE TABLE sReviewer.USUARIO
+(
+idUsuario int AUTO_INCREMENT PRIMARY KEY,
+nick varchar(80)  NOT NULL,
+email varchar (50) NOT NULL,
+senha varchar (30) NOT NULL,
+idResenha int,
+
+CONSTRAINT FK_USUARIO_idResenha FOREIGN KEY (idResenha) REFERENCES sReviewer.RESENHA
+);
+
+CREATE TABLE sReviewer.RESENHA
+(
+idResenha int AUTO_INCREMENT PRIMARY KEY,
+idUsuario int NOT NULL,
+nick varchar (80) NOT NULL,
+genero varchar (20) NOT NULL,
+tituloResenha varchar (40) NOT NULL,
+conteudoRes varchar (1000) NOT NULL,
+avaliacaoResenha varchar (5),
+tipo varchar(10) NOT NULL,
+
+CONSTRAINT FK_RESENHA_genero FOREIGN KEY (genero) REFERENCES sReviewer.CADASTROLIVRO,
+CONSTRAINT FK_RESENHA_idUsuario FOREIGN KEY (idUsuario) REFERENCES sReviewer.USUARIO,
+CONSTRAINT FK_RESENHA_tipo FOREIGN KEY (tipo) REFERENCES sReviewer.RESENHA
+);
+
+
+CREATE TABLE sReviewer.CADASTROFILME
+(
+idFilme int AUTO_INCREMENT PRIMARY KEY,
+descricaoF varchar (500) NOT NULL,
+genero varchar (20) NOT NULL,
+nomeFilme varchar (20) NOT NULL,
+idResenha int,
+
+CONSTRAINT FK_CADASTROFILME_genero FOREIGN KEY (genero) REFERENCES sReviewer.RESENHA,
+CONSTRAINT FK_CADASTROFILME_idResenha FOREIGN KEY (idResenha) REFERENCES sReviewer.RESENHA,
+CONSTRAINT FK_CADASTROFILME_tipo FOREIGN KEY (tipo) REFERENCES sReviewer.RESENHA
+
+);
+
+CREATE TABLE sReviewer.CADASTROJOGO
+(
+idJogo int AUTO_INCREMENT PRIMARY KEY,
+descricaoJ varchar (500) NOT NULL,
+genero varchar (20) NOT NULL,
+nomeJogo varchar (20) NOT NULL,
+idResenha int,
+
+CONSTRAINT FK_CADASTROJOGO_genero FOREIGN KEY (genero) REFERENCES sReviewer.RESENHA,
+CONSTRAINT FK_CADASTROJOGO_idResenha FOREIGN KEY (idResenha) REFERENCES sReviewer.RESENHA,
+CONSTRAINT FK_CADASTROJOGO_tipo FOREIGN KEY (tipo) REFERENCES sReviewer.RESENHA
+
+);
+
+CREATE TABLE sReviewer.CADASTROSERIE
+(
+idSerie int AUTO_INCREMENT PRIMARY KEY,
+descricaoS varchar (500) NOT NULL,
+genero varchar (20) NOT NULL,
+nomeSerie varchar (20) NOT NULL,
+idResenha int,
+
+CONSTRAINT FK_CADASTROSERIE_genero FOREIGN KEY (genero) REFERENCES sReviewer.RESENHA,
+CONSTRAINT FK_CADASTROSERIE_idResenha FOREIGN KEY (idResenha) REFERENCES sReviewer.RESENHA,
+CONSTRAINT FK_CADASTROSERIE_tipo FOREIGN KEY (tipo) REFERENCES sReviewer.RESENHA
+
+);
+
+CREATE TABLE sReviewer.CADASTROLIVRO
+(
+idLivro int AUTO_INCREMENT PRIMARY KEY,
+descricaoL varchar (500) NOT NULL,
+genero varchar (20) NOT NULL,
+nomeLivro varchar (20) NOT NULL,
+idResenha int
+
+CONSTRAINT FK_CADASTROLIVRO_genero FOREIGN KEY (genero) REFERENCES sReviewer.RESENHA,
+CONSTRAINT FK_CADASTROLIVRO_idResenha FOREIGN KEY (idResenha) REFERENCES sReviewer.RESENHA,
+CONSTRAINT FK_CADASTROLIVRO_tipo FOREIGN KEY (tipo) REFERENCES sReviewer.RESENHA,
+
+);
